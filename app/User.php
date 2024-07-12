@@ -51,13 +51,13 @@ class User extends Authenticatable
             return asset("storage/".Auth::user()->profile_picture);
         }else{
             //return 'https://picsum.photos/300/300';
-            return asset('assets/img/escudo.jpg');
+            return asset('storage/profile_pictures/user_default.png');
         }
     }
 
     public function adminlte_desc() {
-        if (isset(Auth::user()->puesto)) {
-            return Auth::user()->puesto;
+        if (isset(Auth::user()->username)) {
+            return Auth::user()->username;
         }else{
             return NULL;
         }
